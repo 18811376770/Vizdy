@@ -15,7 +15,8 @@ router.post('/', function(req, res){
     var collection = db.get('videos');
     collection.insert({
         title: req.body.title,
-        description: req.body.description
+        genre: req.body.genre,
+        description: req.body.desc
     }, function(err, video){
         if(err) throw err;
         res.json(video);
